@@ -1,0 +1,38 @@
+<div class=".tarefa-container">
+  <h1>Lista de Tarefas</h1>
+  
+  <button mat-raised-button color="secondary" class="botao-adicionar" (click)="abrirModal()">
+    Adicionar Nova Tarefa
+  </button>
+
+  @if (tarefas.length === 0) {
+    <div class="empty-state">
+      <p>Nenhuma tarefa encontrada.</p>
+    </div>
+  }
+
+  <div class="tarefas-container">
+    @for (tarefa of tarefas; track tarefa.id) {
+      <mat-card class="tarefa-card">
+        <mat-card-header>
+          <mat-card-title>{{ tarefa.nomeTarefa }}</mat-card-title>
+        </mat-card-header>
+        
+        <mat-card-content>
+          <p><strong>Categoria:</strong> {{ tarefa.categoria }}</p>
+          <p><strong>Prioridade:</strong> {{ tarefa.prioridade }}</p>
+          <p><strong>Data Final:</strong> {{ tarefa.dataFinalDeFinalizacao | date:'dd/MM/yyyy' }}</p>
+        </mat-card-content>
+        
+        <mat-card-actions>
+          <button mat-icon-button color="accent" (click)="abrirModal(tarefa)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="removerTarefa(tarefa.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    }
+  </div>
+</div>

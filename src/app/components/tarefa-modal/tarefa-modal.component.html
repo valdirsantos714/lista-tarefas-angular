@@ -1,0 +1,45 @@
+<h2 mat-dialog-title>{{ modoEdicao ? 'Editar Tarefa' : 'Nova Tarefa' }}</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="formularioTarefa">
+    <mat-form-field appearance="fill">
+      <mat-label >Nome da Tarefa</mat-label>
+      <input matInput formControlName="nomeTarefa" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Categoria</mat-label>
+      <mat-select formControlName="categoria" required>
+        @for (categoria of categorias; track categoria) {
+          <mat-option [value]="categoria">{{ categoria }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Prioridade</mat-label>
+      <mat-select formControlName="prioridade" required>
+        @for (prioridade of prioridades; track prioridade) {
+          <mat-option [value]="prioridade">{{ prioridade }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Data de finalização</mat-label>
+      <input matInput [matDatepicker]="seletorData" 
+             [value]="formularioTarefa.get('dataFinalDeFinalizacao')?.value"
+             (dateInput)="updateDate($event)"
+             placeholder="Escolha a data">
+      <mat-datepicker-toggle matSuffix [for]="seletorData"></mat-datepicker-toggle>
+      <mat-datepicker #seletorData></mat-datepicker>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="fechar()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="salvar()" [disabled]="formularioTarefa.invalid">
+    Salvar
+  </button>
+</mat-dialog-actions>
