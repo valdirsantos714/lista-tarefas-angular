@@ -1,0 +1,18 @@
+{
+    "tarefas": [
+      {
+        "id": 1,
+        "nomeTarefa": "Tarefa de Exemplo 1",
+        "categoria": "OUTROS",
+        "prioridade": "MEDIA",
+        "dataFinalDeFinalizacao": "2023-12-01T00:00:00Z"
+      },
+      {
+        "id": 2,
+        "nomeTarefa": "Tarefa de Exemplo 2",
+        "categoria": "DESENVOLVIMENTO",
+        "prioridade": "ALTA",
+        "dataFinalDeFinalizacao": "2023-12-15T00:00:00Z"
+      }
+    ]
+  }
