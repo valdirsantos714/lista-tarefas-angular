@@ -1,27 +1,41 @@
-# ListaTarefas
+# Lista de Tarefas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+## Descrição
 
-## Development server
+Este projeto é uma aplicação de lista de tarefas (todo list) desenvolvida com Angular 17. Ele permite que os usuários gerenciem suas tarefas de forma eficiente, adicionando, editando, marcando como concluídas e excluindo tarefas.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Funcionalidades
 
-## Code scaffolding
+*   Adicionar novas tarefas com título, descrição, prioridade e categoria.
+*   Listar tarefas existentes, exibindo informações relevantes como título, prioridade e categoria.
+*   Editar tarefas existentes para atualizar suas informações.
+*   Marcar tarefas como concluídas.
+*   Excluir tarefas.
+*   Interface de usuário responsiva e amigável.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tecnologias
 
-## Build
+*   Angular 17: Framework JavaScript para construção de interfaces de usuário.
+*   Angular Material: Biblioteca de componentes de interface de usuário para Angular.
+*   Jest: Framework de teste JavaScript.
+*   Mockoon: Ferramenta de simulação de API para desenvolvimento e teste.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Requisitos
 
-## Running unit tests
+Para rodar este projeto, você precisará ter as seguintes ferramentas instaladas:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+*   [Node.js](https://nodejs.org/) versão 18 ou superior.
+*   [Angular CLI](https://angular.io/cli) versão 17 ou superior (instalado globalmente).
+*   [Mockoon](https://mockoon.com/) instalado e configurado para usar o arquivo `mockoon.json` fornecido.
 
-## Running end-to-end tests
+## Como rodar o Projeto
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1.  Clone este repositório.
+2.  Instale as dependências: `npm install`.
+3.  Inicie o servidor Mockoon, importando e rodando o arquivo `mockoon.json`.
+4.  Inicie o servidor de desenvolvimento Angular: `npm run start` ou `ng serve`.
+5.  Abra o navegador em `http://localhost:4200/`.
 
-## Further help
+## Como rodar os testes
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Execute os testes unitários com o comando: `npm run test`.
