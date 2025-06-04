@@ -23,7 +23,7 @@ export class TarefaService {
 
   listarTarefas(): Observable<TarefaResponseDto[]> {
     return this.http.get<TarefaResponseDto[]>(`${this.apiUrl}/listar`).pipe(
-      map((tarefas: any[]) => {
+      map((tarefas: TarefaResponseDto[]) => {
         return tarefas.map(tarefa => ({
           ...tarefa,
           categoria: CategoriaEnum[tarefa.categoria as keyof typeof CategoriaEnum],
